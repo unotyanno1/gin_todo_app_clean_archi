@@ -1,1 +1,1 @@
-# TODOアプリ(gin x gorm)
+# TODOアプリ(gin x gorm) クリーンアーキテクチャー版
