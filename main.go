@@ -8,16 +8,14 @@ import (
 	"net/http"
 	"encoding/json"
 
+	"github.com/unotyanno1/gin_todo_app_clean_archi/src/domain/models"
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 
 )
 
-type Todo struct {
-	*gorm.Model
-	Content string `json:"content"`
-}
+
 
 type DBConfig struct {
 	User string
@@ -76,7 +74,7 @@ func listeners(r *gin.Engine, db *gorm.DB) {
 	r.POST("/todo/create", func(c *gin.Context) {
 		content := c.PostForm("content")
 		fmt.Println(c.Request.PostForm, content)
-		result := db.Create(&Todo{Content: content})
+		result := db.Create(&models.Todo{Content: content})
 		if errorDB(result, c) { return }
 		c.Redirect(http.StatusMovedPermanently, "/index")
 	})
@@ -95,7 +93,7 @@ func listeners(r *gin.Engine, db *gorm.DB) {
 
 	r.GET("/todo/delete", func(c *gin.Context) {
 		id, _ := c.GetQuery("id")
-		result := db.Delete(&Todo{}, id)
+		result := db.Delete(&models.Todo{}, id)
 		if errorDB(result, c) { return }
 		c.Redirect(http.StatusMovedPermanently, "/index")
 	})
@@ -137,7 +135,7 @@ func main() {
 		log.Fatalf("Failed to migrate database: %v", err)
 	}
 
-	r.LoadHTMLGlob("client/*")
+	r.LoadHTMLGlob("src/infra/http/public/*")
 	listeners(r, db)
 
 	fmt.Println("Database connection and setup successful")
