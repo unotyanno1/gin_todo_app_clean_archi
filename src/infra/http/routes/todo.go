@@ -2,7 +2,7 @@ package router
 
 import (
     "github.com/gin-gonic/gin"
-	"gin_todo_app_clean_archi/src/interface/controllers"
+    "gin_todo_app_clean_archi/src/interface/controllers"
 )
 
 func SetupRouterTodo(r *gin.Engine, todoController *controllers.TodoController) *gin.Engine {

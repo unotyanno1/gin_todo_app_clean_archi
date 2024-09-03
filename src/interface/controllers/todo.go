@@ -2,11 +2,10 @@ package controllers
 
 import (
     "net/http"
-	"strconv"
-
-	"github.com/gin-gonic/gin"
-	"gin_todo_app_clean_archi/src/usecase/services"
-	"gin_todo_app_clean_archi/src/domain/models"
+    "strconv"
+    "github.com/gin-gonic/gin"
+    "gin_todo_app_clean_archi/src/usecase/services"
+    "gin_todo_app_clean_archi/src/domain/models"
 )
 
 type TodoController struct {

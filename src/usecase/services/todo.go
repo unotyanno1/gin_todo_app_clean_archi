@@ -2,8 +2,8 @@ package services
 
 import (
     "context"
-	"gin_todo_app_clean_archi/src/domain/models"
-	"gin_todo_app_clean_archi/src/domain/repositories"
+    "gin_todo_app_clean_archi/src/domain/models"
+    "gin_todo_app_clean_archi/src/domain/repositories"
 )
 
 type TodoService struct {
