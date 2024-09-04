@@ -7,12 +7,12 @@
 
 ・dockerコンテナの立ち上げ  
 ```bash
-root@DESKTOP-RTPGFSE:~/gin_todo_app# docker compose up
+root@DESKTOP-RTPGFSE:~/gin_todo_app_clean_archi# docker compose up
 ```
   
 ・DBとの接続とmain.goの実行  
 ```bash
-root@DESKTOP-RTPGFSE:~/gin_todo_app# DB=gin_todo_app DB_USER=root DB_PASSWORD=password DB_HOST=localhost DB_PORT=3306 go run .
+root@DESKTOP-RTPGFSE:~/gin_todo_app_clean_archi# DB=gin_todo_app DB_USER=root DB_PASSWORD=password DB_HOST=localhost DB_PORT=3306 go run .
 ```
   
 http://localhost:8000/index にアクセスして画面が表示されれば成功  
